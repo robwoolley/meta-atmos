@@ -1,0 +1,134 @@
+Fix CMake install destination
+
+Upstream-Status: Pending
+
+Signed-off-by: Rob Woolley <rob.woolley@windriver.com>
+
+--- a/acados/CMakeLists.txt
++++ b/acados/CMakeLists.txt
+@@ -185,11 +185,11 @@
+     FILES_MATCHING PATTERN "*.h"
+     PATTERN "simplified" EXCLUDE)
+ 
+-install(EXPORT acadosTargets DESTINATION cmake)
++install(EXPORT acadosTargets DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/acados/cmake/acados)
+ 
+ configure_package_config_file(${PROJECT_SOURCE_DIR}/cmake/acadosConfig.cmake.in
+                               ${CMAKE_CURRENT_BINARY_DIR}/cmake/acadosConfig.cmake
+-                              INSTALL_DESTINATION cmake
++                              INSTALL_DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/acados/cmake/acados
+                               PATH_VARS ACADOS_WITH_HPMPC
+                                         ACADOS_WITH_QORE
+                                         ACADOS_WITH_QPOASES
+@@ -200,13 +200,13 @@
+                                         ACADOS_WITH_OOQP)
+ 
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cmake/acadosConfig.cmake
+-        DESTINATION cmake)
++        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/acados/cmake/acados)
+ 
+ install(
+   FILES ${PROJECT_SOURCE_DIR}/cmake/FindEigen3.cmake
+         ${PROJECT_SOURCE_DIR}/cmake/FindFortranLibs.cmake
+         ${PROJECT_SOURCE_DIR}/cmake/FindOpenBLAS.cmake
+-  DESTINATION cmake)
++  DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/acados/cmake/acados)
+ 
+ # set_target_properties(acados
+ #     PROPERTIES SOVERSION ${PACKAGE_SO_VERSION})
+--- a/external/blasfeo/CMakeLists.txt
++++ b/external/blasfeo/CMakeLists.txt
+@@ -1458,7 +1458,7 @@
+ 	RUNTIME DESTINATION bin)
+ 
+ 
+-install(EXPORT blasfeoConfig DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/cmake/blasfeo FILE blasfeoConfig.cmake)
++install(EXPORT blasfeoConfig DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/blasfeo/cmake/blasfeo FILE blasfeoConfig.cmake)
+ 
+ file(GLOB_RECURSE BLASFEO_HEADERS "include/*.h")
+ install(FILES ${BLASFEO_HEADERS} DESTINATION ${BLASFEO_HEADERS_INSTALLATION_DIRECTORY})
+--- a/external/catch/CMakeLists.txt
++++ b/external/catch/CMakeLists.txt
+@@ -60,7 +60,7 @@
+ 
+ # This variable is used in some subdirectories, so we need it here, rather
+ # than later in the install block
+-set(CATCH_CMAKE_CONFIG_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Catch2")
++set(CATCH_CMAKE_CONFIG_DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/cmake/Catch2")
+ 
+ # We have some Windows builds that test `wmain` entry point,
+ # and we need this change to be present in all binaries that
+--- a/external/Clarabel.cpp/CMakeLists.txt
++++ b/external/Clarabel.cpp/CMakeLists.txt
+@@ -82,4 +82,4 @@
+     LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+     )
+ 
+-install(EXPORT ${PROJECT_NAME} DESTINATION cmake)
++install(EXPORT ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/Clarabel/cmake/Clarabel)
+--- a/external/daqp/CMakeLists.txt
++++ b/external/daqp/CMakeLists.txt
+@@ -47,7 +47,7 @@
+   RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+ install(FILES ${daqp_headers} ${daqp_codegen_headers} DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/daqp")
+ 
+-install(EXPORT ${PROJECT_NAME}Config DESTINATION cmake)
++install(EXPORT ${PROJECT_NAME}Config DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/daqp/cmake/daqp )
+ 
+ if(MATLAB)
+   find_package(Matlab)
+--- a/external/hpipm/CMakeLists.txt
++++ b/external/hpipm/CMakeLists.txt
+@@ -372,7 +372,7 @@
+ 	ARCHIVE DESTINATION lib
+ 	RUNTIME DESTINATION bin)
+ 
+-install(EXPORT hpipmConfig DESTINATION cmake)
++install(EXPORT hpipmConfig DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake/${PROJECT_NAME})
+ 
+ file(GLOB_RECURSE HPIPM_HEADERS "include/*.h")
+ install(FILES ${HPIPM_HEADERS} DESTINATION ${HPIPM_HEADERS_INSTALLATION_DIRECTORY})
+--- a/external/hpmpc/CMakeLists.txt
++++ b/external/hpmpc/CMakeLists.txt
+@@ -267,7 +267,7 @@
+ 	ARCHIVE DESTINATION lib
+ 	RUNTIME DESTINATION bin)
+ 
+-install(EXPORT hpmpcConfig DESTINATION cmake)
++install(EXPORT hpmpcConfig DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake/${PROJECT_NAME})
+ 
+ file(GLOB_RECURSE HPMPC_HEADERS "include/*.h")
+ install(FILES ${HPMPC_HEADERS} DESTINATION ${HPMPC_HEADERS_INSTALLATION_DIRECTORY})
+--- a/external/osqp/CMakeLists.txt
++++ b/external/osqp/CMakeLists.txt
+@@ -352,7 +352,7 @@
+ # Create CMake packages for the install directory
+ # ----------------------------------------------
+ 
+-set(ConfigPackageLocation ${CMAKE_INSTALL_LIBDIR}/cmake/osqp)
++set(ConfigPackageLocation ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}/cmake/${PROJECT_NAME})
+ 
+ install(EXPORT ${PROJECT_NAME}
+         FILE osqp-targets.cmake
+--- a/external/qpdunes/CMakeLists.txt
++++ b/external/qpdunes/CMakeLists.txt
+@@ -406,7 +406,7 @@
+ 	INCLUDES DESTINATION include
+ )
+ 
+-install(EXPORT qpdunesConfig DESTINATION cmake)
++install(EXPORT qpdunesConfig DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake/${PROJECT_NAME})
+ 
+ ################################################################################
+ #
+--- a/external/qpoases/CMakeLists.txt
++++ b/external/qpoases/CMakeLists.txt
+@@ -97,7 +97,7 @@
+   LIBRARY DESTINATION lib
+   ARCHIVE DESTINATION lib
+   RUNTIME DESTINATION lib)
+-install(EXPORT qpOASES_eConfig DESTINATION cmake)
++install(EXPORT qpOASES_eConfig DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/${PROJECT_NAME}/cmake/${PROJECT_NAME})
+ # set_target_properties(
+ #     qpOASES_e
+ #     PROPERTIES

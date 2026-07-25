@@ -1,0 +1,21 @@
+Remove unused argument
+
+Similar fix to this: https://github.com/acados/acados/commit/e9fb30d4039c10b1b6e162e0ebe67bb0d3c85c03
+
+Upstream-Status: Pending
+
+Signed-off-by: Rob Woolley <rob.woolley@windriver.com>
+
+diff --git a/acados/ocp_nlp/ocp_nlp_dynamics_cont.c b/acados/ocp_nlp/ocp_nlp_dynamics_cont.c
+index 848385a28..aff00380a 100644
+--- a/acados/ocp_nlp/ocp_nlp_dynamics_cont.c
++++ b/acados/ocp_nlp/ocp_nlp_dynamics_cont.c
+@@ -78,7 +78,7 @@ void *ocp_nlp_dynamics_cont_dims_assign(void *config_, void *raw_memory)
+     align_char_to(8, &c_ptr);
+     dims->sim = sim_sol_config->dims_assign(sim_sol_config, c_ptr);
+ 
+-    c_ptr += sim_sol_config->dims_calculate_size(sim_sol_config);
++    c_ptr += sim_sol_config->dims_calculate_size();
+ 
+     assert((char *) raw_memory + ocp_nlp_dynamics_cont_dims_calculate_size(config_) >= c_ptr);
+ 

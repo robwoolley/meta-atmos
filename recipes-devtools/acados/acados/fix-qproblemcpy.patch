@@ -1,0 +1,25 @@
+Fix QProblemCPY
+
+The ConstraintsCPY call causes an error in GCC15:
+
+    QProblem.c:472:25: error: passing argument 1 of 'ConstraintsCPY' from incompatible pointer type [-Wincompatible-pointer-types]
+
+The argument is Constraints **, yet the function is expecting Constraints *.
+
+Upstream-Status: Pending
+
+Signed-off-by: Rob Woolley <rob.woolley@windriver.com>
+
+diff --git a/external/qpoases/src/QProblem.c b/external/qpoases/src/QProblem.c
+index 4bb5b92..d5e17ca 100644
+--- a/external/qpoases/src/QProblem.c
++++ b/external/qpoases/src/QProblem.c
+@@ -469,7 +469,7 @@ void QProblemCPY(	QProblem* FROM,
+ 	OptionsCPY( &(FROM->options),&(TO->options) );
+ 	QProblem_setPrintLevel( TO,TO->options.printLevel );
+ 
+-	ConstraintsCPY( &(FROM->constraints),&(TO->constraints) );
++	ConstraintsCPY(FROM->constraints,TO->constraints);
+ 
+ 	DenseMatrixCPY(FROM->A, TO->A);
+ 

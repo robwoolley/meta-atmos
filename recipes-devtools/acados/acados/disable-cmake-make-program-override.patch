@@ -1,0 +1,33 @@
+Disable CMAKE_MAKE_PROGRAM override
+
+Acados attempts to set CMAKE_MAKE_PROGRAM, but this causes a build failure:
+
+  CMake Error at CMakeLists.txt:39 (project):
+    Running
+     'BUILD_DIR/tmp/work/x86-64-v3-sgl-linux/acados/0.5.5+git/build/ninja' '--version'
+ 
+    failed with:
+     no such file or directory
+
+Remove this section of CMakeLists.txt to use CMAKE_MAKE_PROGRAM as intended.
+
+Upstream-Status: Pending
+
+Signed-off-by: Rob Woolley <rob.woolley@windriver.com>
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ea7ae62a4..c79151e76 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -31,11 +31,6 @@
+ 
+ cmake_minimum_required(VERSION 3.7.1)
+ 
+-if(CMAKE_MAKE_PROGRAM)
+-    file(TO_CMAKE_PATH ${CMAKE_MAKE_PROGRAM} CMAKE_MAKE_PROGRAM)
+-    find_program(CMAKE_MAKE_PROGRAM ${CMAKE_MAKE_PROGRAM})
+-endif()
+-
+ project(acados LANGUAGES C CXX)
+ 
+ list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
