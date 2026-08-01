@@ -1,0 +1,107 @@
+{
+    "description": "ATMOS: PX4 SITL (x86-64) and Jetson Orin Nano Super companion builds with ROS 2 Jazzy",
+    "sources": {
+        "bitbake": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "https://git.openembedded.org/bitbake"
+                    }
+                },
+                "rev": "2.18"
+            },
+            "path": "bitbake"
+        },
+        "openembedded-core": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "https://git.openembedded.org/openembedded-core"
+                    }
+                },
+                "rev": "wrynose"
+            },
+            "path": "openembedded-core"
+        },
+        "meta-openembedded": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "https://git.openembedded.org/meta-openembedded"
+                    }
+                },
+                "rev": "wrynose"
+            },
+            "path": "meta-openembedded"
+        },
+        "meta-ros": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "https://github.com/ros/meta-ros.git"
+                    }
+                },
+                "rev": "master"
+            },
+            "path": "meta-ros"
+        },
+        "meta-tegra": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "https://github.com/OE4T/meta-tegra.git"
+                    }
+                },
+                "rev": "wrynose"
+            },
+            "path": "meta-tegra"
+        },
+        "meta-px4": {
+            "git-remote": {
+                "remotes": {
+                    "origin": {
+                        "uri": "https://github.com/robwoolley/meta-px4.git"
+                    }
+                },
+                "rev": "wrynose"
+            },
+            "path": "meta-px4"
+        }
+    },
+    "bitbake-setup": {
+        "configurations": [
+            {
+                "bb-layers": [
+                    "openembedded-core/meta",
+                    "meta-openembedded/meta-oe",
+                    "meta-openembedded/meta-python",
+                    "meta-openembedded/meta-networking",
+                    "meta-ros/meta-ros-common",
+                    "meta-ros/meta-ros2",
+                    "meta-ros/meta-ros2-jazzy",
+                    "meta-px4"
+                ],
+                "configurations": [
+                    {
+                        "name": "px4-sitl-x86-64",
+                        "description": "PX4 SITL + ROS 2 Jazzy + uXRCE-DDS agent development image for qemux86-64",
+                        "oe-fragments": [
+                            "machine/qemux86-64"
+                        ]
+                    },
+                    {
+                        "name": "orin-companion",
+                        "description": "Companion computer image for Jetson Orin Nano Super (Pixhawk 6X FMU offboard): ROS 2 Jazzy, uXRCE-DDS agent, px4-msgs, on-target colcon toolchain",
+                        "bb-layers": [
+                            "meta-tegra"
+                        ],
+                        "oe-fragments": [
+                            "machine/jetson-orin-nano-devkit-super"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "version": "1.0"
+}
