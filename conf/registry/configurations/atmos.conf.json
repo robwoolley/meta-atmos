@@ -34,6 +34,13 @@
             },
             "path": "meta-openembedded"
         },
+        "meta-python-ai": {
+            "git-remote": {
+                "uri": "https://github.com/zboszor/meta-python-ai",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
+        },
         "meta-qt5": {
             "git-remote": {
                 "uri": "https://github.com/meta-qt5/meta-qt5.git",
@@ -97,11 +104,12 @@
                     "meta-openembedded/meta-python",
                     "meta-openembedded/meta-webserver",
                     "meta-openembedded/meta-xfce",
+                    "meta-python-ai",
+                    "meta-px4",
                     "meta-qt5",
                     "meta-ros/meta-ros-common",
                     "meta-ros/meta-ros2",
                     "meta-ros/meta-ros2-jazzy",
-                    "meta-px4",
                     "meta-virtualization"
                 ],
                 "configurations": [
