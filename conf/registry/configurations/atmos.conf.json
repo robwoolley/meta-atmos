@@ -90,10 +90,12 @@
                     "meta-openembedded/meta-oe",
                     "meta-openembedded/meta-python",
                     "meta-openembedded/meta-networking",
+                    "meta-qt5",
                     "meta-ros/meta-ros-common",
                     "meta-ros/meta-ros2",
                     "meta-ros/meta-ros2-jazzy",
-                    "meta-px4"
+                    "meta-px4",
+                    "meta-virtualization"
                 ],
                 "configurations": [
                     {
