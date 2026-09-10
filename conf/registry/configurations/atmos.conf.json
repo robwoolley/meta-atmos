@@ -34,6 +34,13 @@
             },
             "path": "meta-openembedded"
         },
+        "meta-qt5": {
+            "git-remote": {
+                "uri": "https://github.com/meta-qt5/meta-qt5.git",
+                "branch": "master",
+                "rev": "master"
+            }
+        },
         "meta-ros": {
             "git-remote": {
                 "remotes": {
