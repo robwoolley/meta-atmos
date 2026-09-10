@@ -110,7 +110,7 @@
                             "meta-tegra"
                         ],
                         "oe-fragments": [
-                            "machine/jetson-orin-nano-devkit-super"
+                            "machine/jetson-orin-nano-devkit-nvme"
                         ]
                     }
                 ]
