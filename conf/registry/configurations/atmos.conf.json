@@ -87,9 +87,16 @@
             {
                 "bb-layers": [
                     "openembedded-core/meta",
-                    "meta-openembedded/meta-oe",
-                    "meta-openembedded/meta-python",
+                    "meta-openembedded/meta-filesystems",
+                    "meta-openembedded/meta-gnome",
+                    "meta-openembedded/meta-initramfs",
+                    "meta-openembedded/meta-multimedia",
                     "meta-openembedded/meta-networking",
+                    "meta-openembedded/meta-oe",
+                    "meta-openembedded/meta-perl",
+                    "meta-openembedded/meta-python",
+                    "meta-openembedded/meta-webserver",
+                    "meta-openembedded/meta-xfce",
                     "meta-qt5",
                     "meta-ros/meta-ros-common",
                     "meta-ros/meta-ros2",
