@@ -73,6 +73,13 @@
                 "rev": "wrynose"
             },
             "path": "meta-px4"
+        },
+        "meta-virtualization": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/meta-virtualization",
+                "branch": "wrynose",
+                "rev": "wrynose"
+            }
         }
     },
     "bitbake-setup": {
