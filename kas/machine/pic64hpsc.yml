@@ -1,0 +1,12 @@
+header:
+  version: 14
+
+machine: "pic64hpsc"
+
+repos:
+  pic64hpsc:
+    url: "https://github.com/pic64-hpsc-hx/meta-mchp.git"
+    path: "layers/meta-mchp-pic64hpsc"
+    layers:
+      meta-mchp-common:
+      meta-mchp-pic64hpsc:
