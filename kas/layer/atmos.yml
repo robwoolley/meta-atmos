@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  atmos:
+    url: "https://github.com/robwoolley/meta-atmos"
+    path: "layers/meta-atmos"

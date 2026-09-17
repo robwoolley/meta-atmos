@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  px4:
+    url: "https://github.com/robwoolley/meta-px4"
+    path: "layers/meta-px4"

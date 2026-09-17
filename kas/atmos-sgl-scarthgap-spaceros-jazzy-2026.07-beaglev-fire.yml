@@ -1,0 +1,10 @@
+header:
+  version: 14
+  includes:
+    - kas/sgl-scarthgap-spaceros-jazzy-2026.07-beaglev-fire.yml
+    - kas/layer/atmos.yml
+    - kas/layer/px4.yml
+
+local_conf_header:
+  atmos: |
+    IMAGE_INSTALL:append = " acados casadi px4-autopilot"
