@@ -19,7 +19,7 @@
                         "uri": "https://git.openembedded.org/openembedded-core"
                     }
                 },
-                "rev": "wrynose"
+                "rev": "master"
             },
             "path": "openembedded-core"
         },
@@ -30,7 +30,7 @@
                         "uri": "https://git.openembedded.org/meta-openembedded"
                     }
                 },
-                "rev": "wrynose"
+                "rev": "master"
             },
             "path": "meta-openembedded"
         },
@@ -52,7 +52,7 @@
                         "uri": "https://github.com/OE4T/meta-tegra.git"
                     }
                 },
-                "rev": "wrynose"
+                "rev": "master"
             },
             "path": "meta-tegra"
         },
@@ -63,7 +63,7 @@
                         "uri": "https://github.com/robwoolley/meta-px4.git"
                     }
                 },
-                "rev": "wrynose"
+                "rev": "master"
             },
             "path": "meta-px4"
         }
