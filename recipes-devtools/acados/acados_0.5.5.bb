@@ -24,20 +24,20 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=d0aae56f9abf0a648c46daaa9c9b0bba \
                     file://utils/license/license.py;md5=a62ff36cc8828b63363000b3fe16e471"
 
 SRC_URI = "git://github.com/acados/acados;protocol=https;name=acados;branch=main \
-           git://github.com/giaf/hpmpc.git;protocol=https;name=hpmpc;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/hpmpc \
-           git://github.com/giaf/blasfeo.git;protocol=https;name=blasfeo;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/blasfeo \
-           git://github.com/acados/qpDUNES-dev.git;protocol=https;name=qpdunes;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/qpdunes \
-           git://github.com/catchorg/Catch2.git;protocol=https;name=catch;branch=devel;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/catch \
-           git://github.com/giaf/hpipm.git;protocol=https;name=hpipm;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/hpipm \
-           git://github.com/acados/qpOASES.git;protocol=https;name=qpoases;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/qpoases \
-           git://github.com/osqp/osqp.git;protocol=https;name=osqp;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/osqp \
-           git://github.com/osqp/qdldl.git;protocol=https;name=qdldl;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/osqp/lin_sys/direct/qdldl/qdldl_sources \
-           git://github.com/acados/tera_renderer;protocol=http;name=tera_renderer;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/interfaces/acados_template/tera_renderer \
-           git://github.com/fangq/jsonlab.git;protocol=https;name=jsonlab;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/jsonlab \
-           git://github.com/acados/test_data;protocol=http;name=testdata;branch=master;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/examples/acados_python/tests/test_data \
-           git://github.com/darnstrom/daqp.git;protocol=https;name=daqp;branch=acados;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/daqp \
-           git://github.com/acados/Clarabel.cpp.git;protocol=https;name=clarabelcpp;branch=migrate_july25;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/Clarabel.cpp \
-           git://github.com/oxfordcontrol/Clarabel.rs.git;protocol=https;name=clarabelrs;branch=main;subdir=${BB_GIT_DEFAULT_DESTSUFFIX}/external/Clarabel.cpp/Clarabel.rs \
+           git://github.com/giaf/hpmpc.git;protocol=https;name=hpmpc;branch=master;subdir=git/external/hpmpc \
+           git://github.com/giaf/blasfeo.git;protocol=https;name=blasfeo;branch=master;subdir=git/external/blasfeo \
+           git://github.com/acados/qpDUNES-dev.git;protocol=https;name=qpdunes;branch=master;subdir=git/external/qpdunes \
+           git://github.com/catchorg/Catch2.git;protocol=https;name=catch;branch=devel;subdir=git/external/catch \
+           git://github.com/giaf/hpipm.git;protocol=https;name=hpipm;branch=master;subdir=git/external/hpipm \
+           git://github.com/acados/qpOASES.git;protocol=https;name=qpoases;branch=master;subdir=git/external/qpoases \
+           git://github.com/osqp/osqp.git;protocol=https;name=osqp;branch=master;subdir=git/external/osqp \
+           git://github.com/osqp/qdldl.git;protocol=https;name=qdldl;branch=master;subdir=git/external/osqp/lin_sys/direct/qdldl/qdldl_sources \
+           git://github.com/acados/tera_renderer;protocol=http;name=tera_renderer;branch=master;subdir=git/interfaces/acados_template/tera_renderer \
+           git://github.com/fangq/jsonlab.git;protocol=https;name=jsonlab;branch=master;subdir=git/external/jsonlab \
+           git://github.com/acados/test_data;protocol=http;name=testdata;branch=master;subdir=git/examples/acados_python/tests/test_data \
+           git://github.com/darnstrom/daqp.git;protocol=https;name=daqp;branch=acados;subdir=git/external/daqp \
+           git://github.com/acados/Clarabel.cpp.git;protocol=https;name=clarabelcpp;branch=migrate_july25;subdir=git/external/Clarabel.cpp \
+           git://github.com/oxfordcontrol/Clarabel.rs.git;protocol=https;name=clarabelrs;branch=main;subdir=git/external/Clarabel.cpp/Clarabel.rs \
            file://disable-cmake-make-program-override.patch \
            file://disable-compiler-options.patch \
            file://fix-qproblemcpy.patch \
