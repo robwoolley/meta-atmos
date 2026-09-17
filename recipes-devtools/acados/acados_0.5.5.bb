@@ -64,6 +64,8 @@ SRCREV_tera_renderer = "c41c5a03a03a42d3ac5084ddcd415502f7721b05"
 
 SRCREV_FORMAT = "acados"
 
+S = "${WORKDIR}/git"
+
 inherit cmake
 
 BLASFEO_TARGET = "${@get_blasfeo_target(d)}"
