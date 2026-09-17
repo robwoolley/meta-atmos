@@ -22,6 +22,8 @@ SRC_URI = "gitsm://github.com/casadi/casadi;protocol=https;branch=main"
 PV = "3.7.2+git"
 SRCREV = "f959d3175a444d763e4eda4aece48f4c5f4a6f90"
 
+S = "${WORKDIR}/git"
+
 DEPENDS = "zlib swig-native"
 
 inherit cmake python3-dir python3native
